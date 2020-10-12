@@ -2,6 +2,9 @@
 
 @media (min-width:320px)  {
     /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+    *{
+        box-sizing: border-box;
+    }
     html {
         position: relative;
         min-height: 100%;
@@ -9,16 +12,6 @@
     body {
         margin: 0 0 25px;
         padding: 10px;
-    }
-    footer {
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        height: 25px;
-        width: 100%;
-        overflow: hidden;
-        display: flex;
-        justify-content: center;
     }
     .logo-wrapper{
         text-align: center;
@@ -36,7 +29,49 @@
         font-size: 44px;
         transition: .3s;
     }
-
+    /*Project title styling*/
+    .project-tab {
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        font-size: 24px;
+        font-weight: 700;
+    }
+    .project-title{
+        width: 90%;
+    }
+    .project-more{
+        width: 10%;
+        cursor: pointer;
+        transition: .3s;
+    }
+    .project-more:hover {
+        color: tomato;
+        transition: .3s;
+    }
+    /*Add Task button styling*/
+    .add-task_window {
+        border-radius: 50%;
+        position: fixed;
+        bottom: 50px;
+        right: 30px;
+        font-size: 40px;
+        font-weight: 700;
+        cursor: pointer;
+        background-color: tomato;
+        color: rgb(255, 253, 245);
+    }
+    /*footer styling*/
+    footer {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 25px;
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+    }
     .author,
     .author a {
         font-size: 14px;
