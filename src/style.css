@@ -37,18 +37,57 @@
         font-size: 24px;
         font-weight: 700;
     }
-    .project-title{
+    .project-tab-title{
         width: 90%;
     }
-    .project-more{
+    .more-projects{
         width: 10%;
         cursor: pointer;
-        transition: .3s;
     }
-    .project-more:hover {
-        color: tomato;
-        transition: .3s;
+    /*main container styling*/
+    .content-container {
+        width: 95%;
+        margin: 20px auto;
     }
+    /*Invidual Project styling*/
+    .project {
+        display: flex;
+        justify-content: space-between;
+        margin: 15px 0;
+    }
+    .project i{
+        margin-left: 5px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+    .project-title{
+        font-size: 20px;
+        font-weight: 500;
+    }
+    /* All projects styling*/
+
+    .all-projects {
+        display: flex;
+        flex-direction: column;
+        visibility: hidden;
+    }
+    .add-project_window{
+        width: 160px;
+        padding: 4px 8px;
+        margin: auto;
+        background: rgb(114, 211, 17);
+        border: 1px solid rgb(0, 180, 0);
+        border-radius: 5px;
+        color: rgb(255, 255, 255);
+        font-size: 20px;
+        font-weight: 700;
+        cursor: pointer;
+    }
+    .add-project_window:active{
+        background-color: rgb(111, 194, 27);
+    }
+
+    /*All Tasks styling*/
     /*Add Task button styling*/
     .add-task_window {
         border-radius: 50%;
