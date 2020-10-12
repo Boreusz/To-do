@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/8c5a8cea67.js" crossorigin="anonymous"></script>
     <title>Universal TDL</title>
-    <script src="main.js"></script>
 </head>
 <body>
     <div class="logo-wrapper">
@@ -13,19 +13,24 @@
     <main>
         <div class="main-wrapper">
             <div class="project-tab">
-                <h2 class="project-title">Title</h2>
-                <span class="more-projects">+</span>
+                <h2 class="project-tab-title">Title</h2>
+                <span class="more-projects"><i class="fas fa-bars"></i></span>
             </div>
         </div>
         <div class="content-container">
+            <div class="add-project_container"></div>
+            <div class="add-task-container"></div>
+            <div class="edit-project_container"></div>
+            <div class="edit-task_container"></div>
             <div class="all-projects">
+                <button class="add-project_window">Add Project</button>
                 <div class="project">
-                    <h3><span>Default</span></h3>
-                    <div><span>edit</span> <span>delete</span></div>
+                    <h3><span class="project-title">Default</span></h3>
+                    <div><span class="edit-project_window"><i class="fas fa-edit"></i></span> <span class="delete-project"><i class="fas fa-trash"></i></span></div>
                 </div>
                 <div class="project">
-                    <h3><span>Project Title</span></h3>
-                    <div><span>edit</span> <span>delete</span></div>
+                    <h3><span class="project-title">Project Title</span></h3>
+                    <div><span class="edit-project_window"><i class="fas fa-edit"></i></span> <span class="delete-project"><i class="fas fa-trash"></i></span></div>
                 </div>
             </div>
             <div class="all-tasks"></div>
@@ -35,5 +40,6 @@
     <footer>
         <span class="author">Made by <a target="_blank" href="https://github.com/Boreusz">Broreusz</a></span>
     </footer>
+    <script src="main.js"></script>
 </body>
 </html>
