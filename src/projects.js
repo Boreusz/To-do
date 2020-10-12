@@ -1,4 +1,4 @@
-const projectHolder = [];
+const projectHolder = []; //optional, find if this variable is needed
 const Project = (name, color = "black") => {
     const toDoList = [];
     const getName = () => name;
@@ -19,7 +19,7 @@ const Project = (name, color = "black") => {
 const defaultProject = Project("Default");
 projectHolder.push(defaultProject);
 export {
-    projectHolder,
     Project,
+    projectHolder,
     defaultProject,
 }
