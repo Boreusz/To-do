@@ -32,21 +32,32 @@ const editTask = document.querySelectorAll(".edit-task"); */
 //Project related
 const allProjectsView = document.querySelector(".more-projects");
 allProjectsView.addEventListener("click", () => {
-    if(document.querySelector(".all-projects").style.visbility != "visible"){
-        document.querySelector(".all-projects").style.visbility = "visible";
-        document.querySelector(".all-tasks").style.visbility = "hidden";
+    if(document.querySelector(".all-projects").style.visibility != "visible"){
+        document.querySelector(".all-projects").style.visibility = "visible";
+        document.querySelector(".all-tasks").style.visibility = "hidden";
     }else{
-        document.querySelector(".all-projects").style.visbility = "hidden";
-        document.querySelector(".all-tasks").style.visbility = "visible";
+        document.querySelector(".all-projects").style.visibility = "hidden";
+        document.querySelector(".all-tasks").style.visibility = "visible";
     }
 })
-/* const chooseProject = document.querySelectorAll(".project-title")
+const chooseProject = document.querySelectorAll(".project-title")
 const openAddProjectWindow = document.querySelector(".add-project_window")
-const addProject = document.querySelector(".add-project");
-const openEditProject = document.querySelectorAll(".edit-project_window");
-const editProject = document.querySelectorAll(".edit-project");
-const deleteProject = document.querySelectorAll(".delete-project"); */
-
+/*const addProject = document.querySelector(".add-project"); */
+const openEditProjects = document.querySelectorAll(".edit-project_window");
+openEditProjects.forEach((project) => {
+    project.addEventListener("click", () =>{
+    })
+})
+const editProjects = document.querySelectorAll(".edit-project");
+editProjects.forEach((project) => {
+    project.addEventListener("click", () =>{
+    })
+})
+const deleteProjects = document.querySelectorAll(".delete-project");
+deleteProjects.forEach((project) => {
+    project.addEventListener("click", () => {
+    })
+})
 })();
 export {
     printingModule,
