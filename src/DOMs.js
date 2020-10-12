@@ -10,7 +10,7 @@ const printingModule = (() => {
     const deleteProject = () => {};
 })();
 const eventListeners = (() => {
-    //Task related
+/*     //Task related
 const completeTasks = document.querySelectorAll(".task-status");
 // completeTasks.forEach(function(task){
 //     task.addEventListener("click", () => {
@@ -28,7 +28,7 @@ const addTask = document.querySelector(".add-task");
 // })
 const deleteTask = document.querySelectorAll(".delete-task");
 const openEditTask = document.querySelectorAll(".edit-task_window");
-const editTask = document.querySelectorAll(".edit-task");
+const editTask = document.querySelectorAll(".edit-task"); */
 //Project related
 const allProjectsView = document.querySelector(".more-projects");
 allProjectsView.addEventListener("click", () => {
@@ -40,12 +40,12 @@ allProjectsView.addEventListener("click", () => {
         document.querySelector(".all-tasks").style.visbility = "visible";
     }
 })
-const chooseProject = document.querySelectorAll(".project-title")
+/* const chooseProject = document.querySelectorAll(".project-title")
 const openAddProjectWindow = document.querySelector(".add-project_window")
 const addProject = document.querySelector(".add-project");
 const openEditProject = document.querySelectorAll(".edit-project_window");
 const editProject = document.querySelectorAll(".edit-project");
-const deleteProject = document.querySelectorAll(".delete-project");
+const deleteProject = document.querySelectorAll(".delete-project"); */
 
 })();
 export {
