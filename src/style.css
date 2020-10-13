@@ -38,6 +38,7 @@
         font-weight: 700;
     }
     .project-tab-title{
+        cursor: pointer;
         width: 90%;
     }
     .more-projects{
@@ -49,28 +50,7 @@
         width: 95%;
         margin: 20px auto;
     }
-    /*Invidual Project styling*/
-    .project {
-        display: flex;
-        justify-content: space-between;
-        margin: 15px 0;
-    }
-    .project i{
-        margin-left: 5px;
-        font-size: 20px;
-        cursor: pointer;
-    }
-    .project-title{
-        font-size: 20px;
-        font-weight: 500;
-    }
-    /* All projects styling*/
-
-    .all-projects {
-        display: flex;
-        flex-direction: column;
-        visibility: hidden;
-    }
+    /*Button for adding project styling*/
     .add-project_window{
         width: 160px;
         padding: 4px 8px;
@@ -85,6 +65,71 @@
     }
     .add-project_window:active{
         background-color: rgb(111, 194, 27);
+    }
+    /*Styling for background of pop-up windows to add/edit task or project*/
+    .add-project-wrapper,
+    .add-task-wrapper,
+    .edit-project-wrapper,
+    .edit-task-wrapper {
+        visibility: hidden;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-width: 100vw;
+        min-height: 100vh;
+        background-color: rgba(0, 0, 0, 0.25);
+    }
+    /*Adding project container styling*/
+    .add-project_container {
+        margin: 0 auto;
+        width: 300px;
+        height: 200px;
+        background-color: white;
+    }
+    .add-project_container form {
+        text-align: center;
+        margin-top: 10px;
+    }
+    .add-project_container input,
+    .add-project_container button{
+        margin-top: 10px;
+        height: 30px;
+    }
+    .new-project-title{
+        font-weight: 600;
+        text-align: center;
+        font-size: 18px;
+        padding-top: 10px;
+    }
+    /*Adding task styling*/
+    /*Editing project styling*/
+    /*editing task styling*/
+    /**/
+    /*Invidual Project styling*/
+    .project {
+        display: flex;
+        justify-content: space-between;
+        margin: 15px 0;
+    }
+    .project i{
+        margin-left: 5px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+    .project-title{
+        cursor: pointer;
+        font-size: 20px;
+        font-weight: 500;
+    }
+    /* All projects styling*/
+
+    .all-projects {
+        display: flex;
+        flex-direction: column;
+        visibility: hidden;
     }
 
     /*All Tasks styling*/
