@@ -16,10 +16,16 @@ const completeTasks = document.querySelectorAll(".task-status");
 //     task.addEventListener("click", () => {
 //         printingModule.completeTask();
 //     })
-// })
+// })*/
 const openAddTaskWindow = document.querySelector(".add-task_window");
-// openAddTaskWindow.addEventListener("click", () => {
-// })
+openAddTaskWindow.addEventListener("click", () => {
+if(document.querySelector(".add-task-wrapper").style.visibility != "visible"){
+    document.querySelector(".add-task-wrapper").style.visibility = "visible";
+}else{
+    document.querySelector(".add-task-wrapper").style.visibility = "hidden";
+}
+})
+/*
 const addTask = document.querySelector(".add-task");
 // addTask.addEventListener("click", () => {
 //     printingModule.createTask();
@@ -42,6 +48,13 @@ allProjectsView.addEventListener("click", () => {
 })
 const chooseProject = document.querySelectorAll(".project-title")
 const openAddProjectWindow = document.querySelector(".add-project_window")
+openAddProjectWindow.addEventListener("click", () => {
+    if(document.querySelector(".add-project-wrapper").style.visibility != "visible"){
+        document.querySelector(".add-project-wrapper").style.visibility = "visible";
+    }else{
+        document.querySelector(".add-project-wrapper").style.visibility = "hidden";
+    }
+})
 /*const addProject = document.querySelector(".add-project"); */
 const openEditProjects = document.querySelectorAll(".edit-project_window");
 openEditProjects.forEach((project) => {
