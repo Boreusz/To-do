@@ -18,9 +18,10 @@
             </div>
         </div>
         <div class="content-container">
-            <div class="add-project-wrapper close">
+            <div class="add-project-wrapper">
                 <div class="add-project_container">
                     <h3 class="new-project-title">New Project</h3>
+                    <span class="close">X</span>
                     <form action="">
                         <input type="text" name="pname" placeholder="Project's name" id="project-name">
                         <input type="text" name="pcolor" placeholder="Project's color" id="project-color">
@@ -28,26 +29,45 @@
                     </form>
                 </div>
             </div>
-            <div class="add-task-wrapper close">
+            <div class="add-task-wrapper">
                 <div class="add-task-container">
                     <h3 class="new-task-title">New Task</h3>
+                    <span class="close">X</span>
                     <form action="">
                         <input type="text" placeholder="Task Title">
-                        <input type="date">
-                        <select name="priority" id="task-priority">
-                            <option value="one">1</option>
-                            <option value="two">2</option>
-                            <option value="three">3</option>
-                            <option value="four">4</option>
-                        </select>
+                        <label for="date">
+                            Due:
+                            <input type="date" name="date">
+                        </label>
+                        <label for="priority">Priority:
+                            <select name="priority" id="task-priority">
+                                <option value="one">1</option>
+                                <option value="two">2</option>
+                                <option value="three">3</option>
+                                <option value="four">4</option>
+                            </select>
+                        </label>
+                        <textarea name="description" id="task-description" cols="30" rows="5">Describe your Task</textarea>
+                        <button type="submit">Add Task</button>
                     </form>
                 </div>
             </div>
-            <div class="edit-project-wrapper close">
-                <div class="edit-project_container"></div>
+            <div class="edit-project-wrapper">
+                <div class="edit-project-container">
+                    <h3 class="edit-project-title">Edit Project</h3>
+                    <span class="close">X</span>
+                    <form action="">
+                        <input type="text" id="project-name-edit" placeholder="Change Project's name">
+                        <input type="text" id="project-color-edit" placeholder="Change Project's color">
+                        <button type="submit" id="project-submit-edit">Submit Changes</button>
+                    </form>
+                </div>
             </div>
-            <div class="edit-task-wrapper close">
-                <div class="edit-task_container"></div>
+            <div class="edit-task-wrapper">
+                <div class="edit-task-container">
+                    <h3 class="edit-task-title">Edit Task</h3>
+                    <span class="close">X</span>
+                </div>
             </div>
             <div class="all-projects">
                 <button class="add-project_window">Add Project</button>

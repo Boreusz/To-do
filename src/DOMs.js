@@ -10,6 +10,13 @@ const printingModule = (() => {
     const deleteProject = () => {};
 })();
 const eventListeners = (() => {
+    //Close button
+    const closeButtons = document.querySelectorAll(".close");
+    closeButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+            button.parentElement.parentElement.style.visibility = "hidden";
+        })
+    })
 /*     //Task related
 const completeTasks = document.querySelectorAll(".task-status");
 // completeTasks.forEach(function(task){
@@ -57,8 +64,9 @@ openAddProjectWindow.addEventListener("click", () => {
 })
 /*const addProject = document.querySelector(".add-project"); */
 const openEditProjects = document.querySelectorAll(".edit-project_window");
-openEditProjects.forEach((project) => {
-    project.addEventListener("click", () =>{
+openEditProjects.forEach((pbutton) => {
+    pbutton.addEventListener("click", () =>{
+                document.querySelector(".edit-project-wrapper").style.visibility = "visible";
     })
 })
 const editProjects = document.querySelectorAll(".edit-project");
