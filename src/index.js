@@ -3,4 +3,3 @@ import {projectHolder, Project, defaultProject, projectcounter} from './projects
 import {toDoTask} from './todos.js';
 import {eventListeners, printingModule} from './DOMs'
 printingModule.printProjects();
-console.log(projectHolder[0].getName())

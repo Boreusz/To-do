@@ -121,6 +121,7 @@ addProject.addEventListener("click", () =>{
 const editProjects = document.querySelector("#project-submit-edit");
 editProjects.addEventListener("click", () =>{
 })
+// const delete Project =
 })();
 export {
     printingModule,
