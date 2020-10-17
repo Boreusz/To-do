@@ -1,13 +1,55 @@
-import {projectHolder, Project, defaultProject} from './projects.js';
+import { add } from 'date-fns';
+import {projectHolder, Project, defaultProject, projectcounter} from './projects.js';
 import {ToDoTask, toDoTask} from './todos.js';
 const printingModule = (() => {
-    const printTask = () =>{};
-    const editTask = () => {};
+    const printTasks = () =>{};
     const deleteTask = () => {}
     const completeTask = () =>{};
-    const printProject = () => {};
-    const editProject = () => {};
+    const printProjects = () => {
+        const allProjects = document.querySelector(".all-projects-container");
+        allProjects.innerHTML = "";
+        for(let i = 0; i < projectHolder.length; i++){
+            const div = document.createElement("div");
+            div.setAttribute("class", "project");
+            const spanTitle = document.createElement("span");
+            spanTitle.setAttribute("class", "project-title")
+            spanTitle.setAttribute("id", projectHolder[i].getID())
+            spanTitle.textContent = projectHolder[i].getName();
+            spanTitle.style.color = projectHolder[i].getColor();
+            div.appendChild(spanTitle);
+            div.innerHTML += `<div><span class="edit-project_window"><i class="fas fa-edit"></i></span> <span class="delete-project"><i class="fas fa-trash"></i></span></div>`
+            allProjects.appendChild(div);
+        }
+        //event listener to dynamically added projects to change view, edit, and delete them
+        const chooseProjects = document.querySelectorAll(".project-title")
+        chooseProjects.forEach((project) => {
+        project.addEventListener("click", () => {
+        document.querySelector(".all-projects").style.visibility = "hidden";
+        document.querySelector(".project-tab-title").textContent = project.textContent;
+        document.querySelector(".project-tab-title").style.color = project.style.color;
+        document.querySelector(".all-tasks").style.visibility = "visible";
+        })
+        const openEditProjects = document.querySelectorAll(".edit-project_window");
+            openEditProjects.forEach((pbutton) => {
+            pbutton.addEventListener("click", () =>{
+                document.querySelector(".edit-project-wrapper").style.visibility = "visible";
+            })
+        })
+        const deleteProjects = document.querySelectorAll(".delete-project");
+        deleteProjects.forEach((project) => {
+            project.addEventListener("click", () => {
+            })
+        })
+        })
+    };
     const deleteProject = () => {};
+    return {
+        printTasks,
+        deleteTask,
+        completeTask,
+        printProjects,
+        deleteProject
+    }
 })();
 const eventListeners = (() => {
     //Close button
@@ -53,7 +95,6 @@ allProjectsView.addEventListener("click", () => {
         document.querySelector(".all-tasks").style.visibility = "visible";
     }
 })
-const chooseProject = document.querySelectorAll(".project-title")
 const openAddProjectWindow = document.querySelector(".add-project_window")
 openAddProjectWindow.addEventListener("click", () => {
     if(document.querySelector(".add-project-wrapper").style.visibility != "visible"){
@@ -62,22 +103,23 @@ openAddProjectWindow.addEventListener("click", () => {
         document.querySelector(".add-project-wrapper").style.visibility = "hidden";
     }
 })
-/*const addProject = document.querySelector(".add-project"); */
-const openEditProjects = document.querySelectorAll(".edit-project_window");
-openEditProjects.forEach((pbutton) => {
-    pbutton.addEventListener("click", () =>{
-                document.querySelector(".edit-project-wrapper").style.visibility = "visible";
-    })
+const addProject = document.querySelector("#add-project-bttn");
+addProject.addEventListener("click", () =>{
+    const name = document.querySelector("#add-project-name")
+    const color = document.querySelector("#add-project-color")
+    if(name.value != ""){
+        const newProject = Project(name.value, color.value, projectcounter.getValue());
+        projectHolder.push(newProject)
+        projectcounter.incrementValue();
+        name.value = "";
+        document.querySelector(".add-project-wrapper").style.visibility = "hidden";
+        printingModule.printProjects();
+    }else{
+        alert("Empty Name Input")
+    }
 })
-const editProjects = document.querySelectorAll(".edit-project");
-editProjects.forEach((project) => {
-    project.addEventListener("click", () =>{
-    })
-})
-const deleteProjects = document.querySelectorAll(".delete-project");
-deleteProjects.forEach((project) => {
-    project.addEventListener("click", () => {
-    })
+const editProjects = document.querySelector("#project-submit-edit");
+editProjects.addEventListener("click", () =>{
 })
 })();
 export {
