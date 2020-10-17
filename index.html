@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="logo-wrapper">
-        <h1><a href="#" class="logo">Universal TDL</a></h1>
+        <h1><a href="index.html" class="logo">Universal TDL</a></h1>
     </div>
     <main>
         <div class="main-wrapper">
@@ -22,10 +22,17 @@
                 <div class="add-project_container">
                     <h3 class="new-project-title">New Project</h3>
                     <span class="close">X</span>
-                    <form action="">
-                        <input type="text" name="pname" placeholder="Project's name" id="project-name">
-                        <input type="text" name="pcolor" placeholder="Project's color" id="project-color">
-                        <button type="submit">Add Project</button>
+                    <form>
+                        <input type="text" name="pname" placeholder="Project's name" id="add-project-name">
+                        <label for="color">Color:
+                            <select name="color" id="add-project-color">
+                                <option value="black">Black</option>
+                                <option value="red">Red</option>
+                                <option value="blue">Blue</option>
+                                <option value="green">green</option>
+                            </select>
+                        </label>
+                        <button type="button" id="add-project-bttn">Add Project</button>
                     </form>
                 </div>
             </div>
@@ -33,7 +40,7 @@
                 <div class="add-task-container">
                     <h3 class="new-task-title">New Task</h3>
                     <span class="close">X</span>
-                    <form action="">
+                    <form>
                         <input type="text" placeholder="Task Title">
                         <label for="date">
                             Due:
@@ -48,7 +55,7 @@
                             </select>
                         </label>
                         <textarea name="description" id="task-description" cols="30" rows="5">Describe your Task</textarea>
-                        <button type="submit">Add Task</button>
+                        <button type="button">Add Task</button>
                     </form>
                 </div>
             </div>
@@ -56,10 +63,17 @@
                 <div class="edit-project-container">
                     <h3 class="edit-project-title">Edit Project</h3>
                     <span class="close">X</span>
-                    <form action="">
+                    <form>
                         <input type="text" id="project-name-edit" placeholder="Change Project's name">
-                        <input type="text" id="project-color-edit" placeholder="Change Project's color">
-                        <button type="submit" id="project-submit-edit">Submit Changes</button>
+                        <label for="color">Color:
+                            <select name="color" id="project-color-edit">
+                                <option value="black">Black</option>
+                                <option value="red">Red</option>
+                                <option value="blue">Blue</option>
+                                <option value="green">green</option>
+                            </select>
+                        </label>
+                        <button type="button" id="project-submit-edit">Submit Changes</button>
                     </form>
                 </div>
             </div>
@@ -71,14 +85,7 @@
             </div>
             <div class="all-projects">
                 <button class="add-project_window">Add Project</button>
-                <div class="project">
-                    <h3><span class="project-title">Default</span></h3>
-                    <div><span class="edit-project_window"><i class="fas fa-edit"></i></span> <span class="delete-project"><i class="fas fa-trash"></i></span></div>
-                </div>
-                <div class="project">
-                    <h3><span class="project-title">Project Title</span></h3>
-                    <div><span class="edit-project_window"><i class="fas fa-edit"></i></span> <span class="delete-project"><i class="fas fa-trash"></i></span></div>
-                </div>
+                <div class="all-projects-container"></div>
             </div>
             <div class="all-tasks"></div>
         </div>
