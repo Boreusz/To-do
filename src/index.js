@@ -1,4 +1,6 @@
 require('./style.css');
-import {Project, defaultProject} from './projects.js';
+import {projectHolder, Project, defaultProject, projectcounter} from './projects.js';
 import {toDoTask} from './todos.js';
-import {eventListeners} from './DOMs'
+import {eventListeners, printingModule} from './DOMs'
+printingModule.printProjects();
+console.log(projectHolder[0].getName())
