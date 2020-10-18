@@ -13,6 +13,9 @@
         margin: 0 0 25px;
         padding: 10px;
     }
+    b {
+        font-weight: 700;
+    }
     .logo-wrapper{
         text-align: center;
         margin: 20px auto;
@@ -75,7 +78,8 @@
     .add-project-wrapper,
     .add-task-wrapper,
     .edit-project-wrapper,
-    .edit-task-wrapper {
+    .edit-task-wrapper,
+    .assurance-wrapper {
         visibility: hidden;
         position: fixed;
         top: 0;
@@ -102,11 +106,11 @@
     .edit-project-container {
         position: relative;
         display: inline-block;
-        margin: 0 auto;
         width: 300px;
         height: 160px;
-        background-color: white;
+        margin: 0 auto;
         text-align: center;
+        background-color: white;
     }
     .add-project_container form,
     .edit-project-container form {
@@ -148,15 +152,6 @@
     }
 
     /*Editing project styling*/
-    .edit-project-container {
-        position: relative;
-        display: inline-block;
-        width: 300px;
-        height: 160px;
-        margin: 0 auto;
-        text-align: center;
-        background-color: white;
-    }
     .edit-project-title {
         font-size: 18px;
     }
@@ -165,7 +160,27 @@
     .edit-project-container select {
         margin-top: 10px;
     }
-    /*editing task styling*/
+    /*deleting project pop-up*/
+    .assurance-container {
+        position: relative;
+        display: inline-block;
+        margin: 0 auto;
+        width: 300px;
+        height: 100px;
+        background-color: white;
+        text-align: center;
+    }
+    .assurance-text {
+        display: block;
+        margin-top: 10px;
+        padding: 0 20px;
+    }
+    .assurance-buttons{
+        width: 250px;
+        margin: 15px auto;
+        display: flex;
+        justify-content: space-evenly;
+    }
     /**/
     /*Invidual Project styling*/
     .project {
