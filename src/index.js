@@ -3,3 +3,4 @@ import {projectHolder, Project, defaultProject, projectcounter} from './projects
 import {toDoTask} from './todos.js';
 import {eventListeners, printingModule} from './DOMs'
 printingModule.printProjects();
+printingModule.chooseProject(document.querySelector(".project-title"));
