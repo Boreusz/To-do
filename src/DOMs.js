@@ -9,6 +9,7 @@ const printingModule = (() => {
         document.querySelector(".all-projects").style.visibility = "hidden";
         document.querySelector(".project-tab-title").textContent = project.textContent;
         document.querySelector(".project-tab-title").style.color = project.style.color;
+        document.querySelector(".project-tab-title").setAttribute("id", project.parentElement.getAttribute("id"));
         document.querySelector(".all-tasks").style.visibility = "visible";
     };
     const printProjects = () => {
@@ -120,6 +121,7 @@ addProject.addEventListener("click", () =>{
         projectcounter.incrementValue();
         document.querySelector(".add-project-wrapper").style.visibility = "hidden";
         printingModule.printProjects();
+        console.log()
     }else{
         alert("Empty Name Input")
     }
@@ -144,7 +146,19 @@ editProjects.addEventListener("click", () =>{
 const acceptDeletion = document.querySelector("#yes-bttn");
 acceptDeletion.addEventListener("click", () =>{
     const projectIndex = projectHolder.findIndex(x => x.getID() == document.querySelector(".assurance-text").getAttribute("id"));
-    projectHolder.splice(projectIndex, 1);
+    if((document.querySelector(".project-tab-title").getAttribute("id") == document.querySelector(".assurance-text").getAttribute("id")) && projectHolder.length > 1){
+        projectHolder.splice(projectIndex, 1);
+        printingModule.chooseProject(document.getElementById(`${projectHolder[0].getID()}`).childNodes[0]);
+        document.querySelector(".all-projects").style.visibility = "visible";
+        document.querySelector(".all-tasks").style.visibility = "hidden";
+    }else if (document.querySelector(".project-tab-title").getAttribute("id") == document.querySelector(".assurance-text").getAttribute("id") && projectHolder.length <= 1){
+        projectHolder.splice(projectIndex, 1);
+        document.querySelector(".all-tasks").innerHTML = "";
+        document.querySelector(".project-tab-title").textContent = "Add and Choose New Project";
+    }else {
+        projectHolder.splice(projectIndex, 1);
+        alert("lol")
+    }
     printingModule.printProjects();
     document.querySelector(".assurance-wrapper").style.visibility = "hidden";
 })
