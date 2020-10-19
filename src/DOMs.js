@@ -121,7 +121,9 @@ addProject.addEventListener("click", () =>{
         projectcounter.incrementValue();
         document.querySelector(".add-project-wrapper").style.visibility = "hidden";
         printingModule.printProjects();
-        console.log()
+        if(projectHolder.length == 1){
+            printingModule.chooseProject(document.getElementById(`${projectHolder[0].getID()}`).childNodes[0]);
+        }
     }else{
         alert("Empty Name Input")
     }
@@ -157,7 +159,6 @@ acceptDeletion.addEventListener("click", () =>{
         document.querySelector(".project-tab-title").textContent = "Add and Choose New Project";
     }else {
         projectHolder.splice(projectIndex, 1);
-        alert("lol")
     }
     printingModule.printProjects();
     document.querySelector(".assurance-wrapper").style.visibility = "hidden";
