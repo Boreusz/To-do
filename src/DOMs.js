@@ -2,8 +2,23 @@ import { add } from 'date-fns';
 import {projectHolder, Project, defaultProject, projectcounter} from './projects.js';
 import {ToDoTask, toDoTask} from './todos.js';
 const printingModule = (() => {
-    const printTasks = () =>{};
-    const deleteTask = () => {}
+    const printTasks = () =>{
+        const allTasks = document.querySelector(".all-tasks");
+        allTasks.innerHTML = "";
+        const activeProjectID = document.querySelector(".project-tab-title").getAttribute("id");
+        const activeProjectIndex = projectHolder.findIndex(x => x.getID() == activeProjectID);
+        for(let i = 0; i < projectHolder[activeProjectIndex].toDoList.length; i++){
+            const div = document.createElement("div");
+            div.setAttribute("id", projectHolder[activeProjectIndex].toDoList[i].getID());
+            div.setAttribute("class", "task");
+            const taskTitle = document.createElement("span");
+            taskTitle.setAttribute("class", "task-title");
+            taskTitle.textContent = projectHolder[activeProjectIndex].toDoList[i].getName();
+            div.appendChild(taskTitle);
+            div.innerHTML += `<div><span class="edit-task_window"><i class="fas fa-edit"></i></span> <span class="delete-task"><i class="fas fa-trash"></i></span></div>`;
+            allTasks.appendChild(div);
+        }
+    };
     const completeTask = () =>{};
     const chooseProject = (project) => {
         document.querySelector(".all-projects").style.visibility = "hidden";
@@ -32,7 +47,8 @@ const printingModule = (() => {
         chooseProjects.forEach((project) => {
         project.addEventListener("click", () => {
             printingModule.chooseProject(project);
-        //printigmodule.printTasks();
+            printingModule.printTasks();
+
         })
         const openEditProjects = document.querySelectorAll(".edit-project_window");
             openEditProjects.forEach((pbutton) => {
@@ -51,14 +67,11 @@ const printingModule = (() => {
         })
         })
     };
-    const deleteProject = () => {};
     return {
         printTasks,
-        deleteTask,
         completeTask,
         chooseProject,
-        printProjects,
-        deleteProject
+        printProjects
     }
 })();
 const eventListeners = (() => {
@@ -87,6 +100,28 @@ if(document.querySelector(".add-task-wrapper").style.visibility != "visible"){
 
 const addTask = document.querySelector("#add-task");
 addTask.addEventListener("click", () => {
+    if(projectHolder.length >= 1){
+        const title = document.querySelector("#add-task-title");
+        const date = document.querySelector("#add-task-date");
+        const priority = document.querySelector("#add-task-priority");
+        const description = document.querySelector("#add-task-description");
+        const projectID = document.querySelector(".project-tab-title").getAttribute("id");
+        const projectIndex = projectHolder.findIndex(x => x.getID() == projectID);
+        if(title.value != ""){
+            const newTask = ToDoTask(title.value, description.value, date.value, priority.value, projectHolder[projectIndex].giveTaskID());
+            projectHolder[projectIndex].addTask(newTask);
+            document.querySelector(".add-task-wrapper").style.visibility = "hidden";
+            printingModule.printTasks();
+            title.value = "";
+            date.value = "mm/dd/yyyy";
+            priority.value = "1";
+            description.value = "";
+        }else{
+            alert("Task Title is not defined")
+        }
+    }else{
+        alert("There is no Project available to assign task")
+    }
 })
 /*
 const deleteTask = document.querySelectorAll(".delete-task");
@@ -151,6 +186,7 @@ acceptDeletion.addEventListener("click", () =>{
     if((document.querySelector(".project-tab-title").getAttribute("id") == document.querySelector(".assurance-text").getAttribute("id")) && projectHolder.length > 1){
         projectHolder.splice(projectIndex, 1);
         printingModule.chooseProject(document.getElementById(`${projectHolder[0].getID()}`).childNodes[0]);
+        printingModule.printTasks();
         document.querySelector(".all-projects").style.visibility = "visible";
         document.querySelector(".all-tasks").style.visibility = "hidden";
     }else if (document.querySelector(".project-tab-title").getAttribute("id") == document.querySelector(".assurance-text").getAttribute("id") && projectHolder.length <= 1){
