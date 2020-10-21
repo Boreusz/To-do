@@ -51,20 +51,20 @@
                     <h3 class="new-task-title">New Task</h3>
                     <span class="close">X</span>
                     <form>
-                        <input type="text" placeholder="Task Title">
+                        <input type="text" placeholder="Task Title" id="add-task-title">
                         <label for="date">
                             Due:
-                            <input type="date" name="date">
+                            <input type="date" name="date" id="add-task-date">
                         </label>
                         <label for="priority">Priority:
-                            <select name="priority" id="task-priority">
+                            <select name="priority" id="add-task-priority">
                                 <option value="one">1</option>
                                 <option value="two">2</option>
                                 <option value="three">3</option>
                                 <option value="four">4</option>
                             </select>
                         </label>
-                        <textarea name="description" id="task-description" cols="30" rows="5">Describe your Task</textarea>
+                        <textarea name="description" id="add-task-description" cols="30" rows="5">Describe your Task</textarea>
                         <button type="button" id="add-task">Add Task</button>
                     </form>
                 </div>
