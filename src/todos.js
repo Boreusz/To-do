@@ -1,4 +1,4 @@
-const ToDoTask = (name, description = "", dueDate = "", priority = "4", status = "To do") => {
+const ToDoTask = (name, description = "", dueDate = "", priority = "4", id, status = "To do") => {
     const getName = () => name;
     const changeName = (newName) => name = newName;
     const getDescirpiton = () => description;
@@ -9,6 +9,7 @@ const ToDoTask = (name, description = "", dueDate = "", priority = "4", status =
     const changePriority = (newPriority) => priority = newPriority;
     const getStatus = () => status;
     const changeStatus = (newStatus) => status = newStatus;
+    const getID = () => id;
     return {
         getName,
         changeName,
@@ -19,7 +20,8 @@ const ToDoTask = (name, description = "", dueDate = "", priority = "4", status =
         getPriority,
         changePriority,
         getStatus,
-        changeStatus
+        changeStatus,
+        getID
     }
 }
 export {
