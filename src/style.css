@@ -39,6 +39,7 @@
         text-align: center;
         font-size: 24px;
         font-weight: 700;
+        margin: 0 auto;
     }
     .project-tab-title{
         display: block;
@@ -79,7 +80,8 @@
     .add-task-wrapper,
     .edit-project-wrapper,
     .edit-task-wrapper,
-    .assurance-wrapper {
+    .assurance-wrapper,
+    .task-assurance-wrapper {
         visibility: hidden;
         position: fixed;
         top: 0;
@@ -130,7 +132,8 @@
     }
     .new-project-title,
     .new-task-title,
-    .edit-project-title{
+    .edit-project-title,
+    .edit-task-title {
         font-weight: 600;
         font-size: 18px;
         padding-top: 10px;
@@ -152,16 +155,14 @@
     }
 
     /*Editing project styling*/
-    .edit-project-title {
-        font-size: 18px;
-    }
     .edit-project-container input,
     .edit-project-container button,
     .edit-project-container select {
         margin-top: 10px;
     }
     /*deleting project pop-up*/
-    .assurance-container {
+    .assurance-container,
+    .task-assurance-container {
         position: relative;
         display: inline-block;
         margin: 0 auto;
@@ -170,18 +171,29 @@
         background-color: white;
         text-align: center;
     }
-    .assurance-text {
+    .assurance-text,
+    .task-assurance-text {
         display: block;
         margin-top: 10px;
         padding: 0 20px;
     }
-    .assurance-buttons{
+    .assurance-buttons,
+    .task-assurance-buttons {
         width: 250px;
         margin: 15px auto;
         display: flex;
         justify-content: space-evenly;
     }
-    /**/
+    /*Editing Task styling*/
+    .edit-task-container {
+        position: relative;
+        display: inline-block;
+        margin: 0 auto;
+        width: 300px;
+        height: 200px;
+        background-color: white;
+        text-align: center;
+    }
     /*Invidual Project styling*/
     .project {
         display: flex;
@@ -210,7 +222,7 @@
     .all-projects {
         display: flex;
         flex-direction: column;
-        visibility: hidden;
+        visibility: visible;
     }
     .all-projects-container {
         display: flex;
@@ -218,6 +230,46 @@
     }
 
     /*All Tasks styling*/
+    .task {
+        padding: 10px;
+    }
+    .task i {
+        padding-right: 10px;
+        font-size: 24px;
+        cursor: pointer;
+    }
+    .task-bar {
+        display: flex;
+        justify-content: space-between;
+
+    }
+    .task-title {
+        font-size: 20px;
+        font-weight: 700;
+    }
+    .more-wrapper {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+    }
+    .more-wrapper span {
+        padding-bottom: 10px;
+        word-wrap: break-word;
+    }
+    .task-description {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 10px;
+    }
+    .task-description span {
+        padding: 5px 15px;
+
+    }
+    .task-buttons-wrapper {
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-evenly;
+    }
     /*Add Task button styling*/
     .add-task_window {
         border-radius: 50%;
@@ -253,10 +305,47 @@
     }
 }
 @media (min-width:480px)  { /* smartphones, Android phones, landscape iPhone */ }
-@media (min-width:600px)  { /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ }
-@media (min-width:801px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
-@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
+@media (min-width:600px)  {
+    /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
+    .project-tab {
+        width: 90%;
+    }
+    .content-container {
+        width: 80%;
+    }
+    .all-projects-container {
+        margin: 0 20px;
+    }
+    .add-task_window {
+        right: 5%;
+    }
+}
+@media (min-width:801px)  { 
+    /* tablet, landscape iPad, lo-res laptops ands desktops */ 
+    .add-task_window {
+        right: 10%;
+    }
+}
+@media (min-width:1025px) {
+    /* big landscape tablets, laptops, and desktops */
+    .project-tab {
+        width: 800px;
+    }
+    .content-container {
+        width: 800px;
+    }
+    .add-task_window {
+        right: 16%;
+    }
+}
 @media (min-width:1281px) {
     /* hi-res laptops and desktops */
-
+    .add-task_window {
+        right: 20%;
+    }
+}
+@media (min-width: 1440px){
+    .add-task_window {
+        right: 25%;
+    }
 }

@@ -25,7 +25,6 @@
                         <button type="button" id="yes-bttn">Yes</button>
                         <button type="button" id="no-bttn">No</button>
                     </div>
-
                 </div>
             </div>
             <div class="add-project-wrapper">
@@ -58,13 +57,12 @@
                         </label>
                         <label for="priority">Priority:
                             <select name="priority" id="add-task-priority">
-                                <option value="one">1</option>
-                                <option value="two">2</option>
-                                <option value="three">3</option>
-                                <option value="four">4</option>
+                                <option value="low">Low</option>
+                                <option value="medium">Medium</option>
+                                <option value="high">High</option>
                             </select>
                         </label>
-                        <textarea name="description" id="add-task-description" cols="30" rows="5">Describe your Task</textarea>
+                        <textarea name="description" id="add-task-description" cols="30" rows="5"></textarea>
                         <button type="button" id="add-task">Add Task</button>
                     </form>
                 </div>
@@ -91,6 +89,31 @@
                 <div class="edit-task-container">
                     <h3 class="edit-task-title">Edit Task</h3>
                     <span class="close">X</span>
+                    <form>
+                        <input type="text" placeholder="Task Title" id="edit-task-title">
+                        <label for="date">
+                            Due:
+                            <input type="date" name="date" id="edit-task-date">
+                        </label>
+                        <label for="priority">Priority:
+                            <select name="priority" id="edit-task-priority">
+                                <option value="low">Low</option>
+                                <option value="medium">Medium</option>
+                                <option value="high">High</option>
+                            </select>
+                        </label>
+                        <textarea name="description" id="edit-task-description" cols="30" rows="5"></textarea>
+                        <button type="button" id="edit-task">Edit Task</button>
+                    </form>
+                </div>
+            </div>
+            <div class="task-assurance-wrapper">
+                <div class="task-assurance-container">
+                    <span class="task-assurance-text"></span>
+                    <div class="task-assurance-buttons">
+                        <button type="button" id="task-yes-bttn">Yes</button>
+                        <button type="button" id="task-no-bttn">No</button>
+                    </div>
                 </div>
             </div>
             <div class="all-projects">

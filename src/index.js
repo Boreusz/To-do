@@ -1,6 +1,4 @@
 require('./style.css');
-import {projectHolder, Project, defaultProject, projectcounter} from './projects.js';
-import {toDoTask} from './todos.js';
-import {eventListeners, printingModule} from './DOMs'
+import {printingModule} from './DOMs';
 printingModule.printProjects();
-printingModule.chooseProject(document.querySelector(".project-title"));
+printingModule.chooseProject(document.querySelector('.project-title'));
