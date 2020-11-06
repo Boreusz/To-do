@@ -120,16 +120,16 @@ const printingModule = (() => {
       task.addEventListener('click', ()=> {
         document.querySelector('.task-assurance-wrapper').style.visibility =
               'visible';
+        document.querySelector(
+            '.task-assurance-text',
+        ).innerHTML = `Do you want delete <b>${task.parentNode.parentNode.parentNode.childNodes[0].childNodes[0].textContent}</b> Task?`;
+        document
+            .querySelector('.task-assurance-text')
+            .setAttribute(
+                'id',
+                task.parentElement.getAttribute('id'),
+            );
       });
-      document.querySelector(
-          '.task-assurance-text',
-      ).innerHTML = `Do you want delete <b>${task.parentNode.parentNode.parentNode.childNodes[0].childNodes[0].textContent}</b> Task?`;
-      document
-          .querySelector('.task-assurance-text')
-          .setAttribute(
-              'id',
-              task.parentElement.getAttribute('id'),
-          );
     });
   };
   const chooseProject = (project) => {
@@ -190,10 +190,10 @@ const printingModule = (() => {
             '.assurance-text',
         ).innerHTML = `Do you want delete <b>${project.parentNode.parentNode.childNodes[0].textContent}</b> Project?`;
         document
-            .querySelector('.task-assurance-text')
+            .querySelector('.assurance-text')
             .setAttribute(
                 'id',
-                task.parentElement.parentElement.getAttribute('id'),
+                project.parentElement.parentElement.parentElement.getAttribute('id'),
             );
       });
     });
@@ -306,7 +306,7 @@ const eventListeners = (() => {
     const taskIndex = projectHolder[projectIndex].toDoList.findIndex(
         (y) =>
           y.getID() ==
-        document.querySelector('.task-assurance-text'),
+        document.querySelector('.task-assurance-text').getAttribute('id'),
     );
     projectHolder[projectIndex].toDoList.splice(taskIndex, 1);
     printingModule.printTasks();
